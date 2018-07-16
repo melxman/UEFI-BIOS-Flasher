@@ -1,0 +1,34 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = pAnalyzeDrv
+  FILE_GUID                      = CA38177F-D797-4366-964D-EFED843021AD
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = pAnalyzeDrvEntry
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  pAnalyzeDrv.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  AppPkg/AppPkg.dec
+  AppPkg/Python.dec
+
+[Protocols]
+  gEfiSimplePointerProtocolGuid
+  gEfiPypAnalyzeTestProtocol
+  gEfiPypAnalyzeTestProtocol2
+  gEfiPypAnalyzeTestProtocol3
+
+[LibraryClasses]
+  UefiLib
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  BaseLib
+
+[Depex]
+  TRUE

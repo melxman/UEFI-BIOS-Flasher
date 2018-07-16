@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = pAnalyzeApp2
+  FILE_GUID                      = A3D8D2F1-59E3-40C6-930E-C81A0BBDED22
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  pAnalyzeApp2.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  AppPkg/AppPkg.dec
+  AppPkg/Python.dec
+
+[Protocols]
+  gEfiPypAnalyzeTestProtocol
+  gEfiPypAnalyzeTestProtocol2
+  gEfiPypAnalyzeTestProtocol3
+
+[LibraryClasses]
+  UefiLib
+  ShellCEntryLib
+  UefiBootServicesTableLib

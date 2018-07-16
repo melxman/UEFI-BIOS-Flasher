@@ -1,0 +1,23 @@
+[Defines]
+  INF_VERSION                    = 0x00010006
+  BASE_NAME                      = pAnalyzeApp
+  FILE_GUID                      = 3AEE8341-5B8D-4E47-879B-1D3EFA4A9361
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.1
+  ENTRY_POINT                    = ShellCEntryLib
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  pAnalyzeApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  AppPkg/Python.dec
+
+[LibraryClasses]
+  UefiLib
+  ShellCEntryLib
